@@ -632,8 +632,12 @@
       --fa: "\f1e0";
 }
   
-  .fa-heart {
-      --fa: "\f004";
+.fa-phone {
+      --fa: "\f095";
+}
+
+.fa-envelope {
+  --fa: "\f0e0";
 }
 
     :root, :host {
