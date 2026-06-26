@@ -1,0 +1,62 @@
+.dss_admin_mode {
+    position: relative;
+}
+
+.dss_admin_mode .dss_multi_logic ul {
+    padding: 0;
+    list-style: none;
+}
+
+.dss_admin_mode .dss_multi_logic ul li {
+    line-height: 1.5em;
+    white-space: nowrap;
+}
+
+.dss_admin_mode .dss_admin_mode_shortcode {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 5px !important;
+    font-size: 12px;
+    background-color: #48ac1f;
+    color: #FFF;
+    line-height: 1em;
+    font-family: Helvetica;
+    font-weight: bold;
+    display: inline-block;
+    z-index: 99999;
+}
+
+.dss_admin_mode .dss_admin_mode_shortcode .dss_multi_logic {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 5px;
+    background-color: #48ac1f;
+    z-index: 99999;
+    border-top: 2px solid #fff;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
+}
+
+.dss_admin_mode .dss_admin_mode_shortcode:hover .dss_multi_logic {
+    visibility: visible;
+    opacity: 1;
+}
+
+.dss_admin_mode.et_pb_section .dss_admin_mode_shortcode, .dss_admin_mode .et_pb_section .dss_admin_mode_shortcode, .dss_admin_mode.et_pb_section .dss_admin_mode_shortcode .dss_multi_logic {
+    background-color: #2b87da;
+}
+
+.dss_admin_mode.et_pb_section.et_pb_fullwidth_section .dss_admin_mode_shortcode, .dss_admin_mode .et_pb_section.et_pb_fullwidth_section .dss_admin_mode_shortcode, .dss_admin_mode.et_pb_section.et_pb_fullwidth_section .dss_admin_mode_shortcode .dss_multi_logic {
+    background-color: #6c2eb9;
+}
+
+.dss_admin_mode.et_pb_row .dss_admin_mode_shortcode, .dss_admin_mode .et_pb_row .dss_admin_mode_shortcode, .dss_admin_mode.et_pb_row .dss_admin_mode_shortcode .dss_multi_logic {
+    background-color: #29c4a9;
+}
+
+.dss_admin_mode.et_pb_module .dss_admin_mode_shortcode, .dss_admin_mode .et_pb_module .dss_admin_mode_shortcode, .dss_admin_mode.et_pb_module .dss_admin_mode_shortcode .dss_multi_logic {
+    background-color: #4c5866;
+}
