@@ -1,5 +1,6 @@
 /*
 Strict-Transport-Security: max-age=3600; includeSubDomains;
+X-Frame-Options: DENY
 
 https://fightden-ca.pages.dev/*
   X-Robots-Tag: noindex
