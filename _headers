@@ -1,5 +1,5 @@
 /*
-Strict-Transport-Security: max-age=86400; includeSubDomains;
+Strict-Transport-Security: max-age=2592000; includeSubDomains;
 X-Frame-Options: DENY
 Cross-Origin-Opener-Policy: same-origin
 
