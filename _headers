@@ -1,0 +1,5 @@
+/*
+Strict-Transport-Security: max-age=3600; includeSubDomains;
+
+https://fightden-ca.pages.dev/*
+  X-Robots-Tag: noindex
