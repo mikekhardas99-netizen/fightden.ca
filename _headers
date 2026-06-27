@@ -4,7 +4,7 @@ X-Frame-Options: DENY
 Cross-Origin-Opener-Policy: same-origin
 Permissions-Policy: geolocation=(self "https://fightden-ca.pages.dev")
 X-XSS-Protection: 1; mode=block
-Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; object-src 'self'; img-src 'self'; base-uri 'self'; frame-ancestors 'none'; media-src 'self'; require-trusted-types-for 'script'
+Content-Security-Policy: default-src 'self'; script-src 'self' 'nonce-jWJJyVKZVUCKwtFf27jlj44NNICDJwkhUF4nagPcSs'; style-src 'self' 'unsafe-inline'; object-src 'self'; img-src 'self'; base-uri 'self'; frame-ancestors 'none'; media-src 'self'; require-trusted-types-for 'script'
 Access-Control-Allow-Origin: https://fightden-ca.pages.dev
 
 https://fightden-ca.pages.dev/*
