@@ -1,3 +1,12 @@
+document.getElementById("faPhone").addEventListener('click', (e) => updatePhone(e));
+
+function updatePhone()
+{
+  //document.getElementById("aTel").href = 'tel:4168451532';
+  document.getElementById("aTel").href = 'tel:7051112222';
+  console.log("Phone link updated");
+}
+
 // Automatic Slideshow - change image every 4 seconds
 var myIndex = 0;
 carousel();
