@@ -3,7 +3,7 @@ document.getElementById("faPhone").addEventListener('click', (e) => updatePhone(
 function updatePhone()
 {
   //document.getElementById("aTel").href = 'tel:4168451532';
-  document.getElementById("aTel").href = 'tel:7051112222';
+  document.getElementById("aTel").href = 'tel:8004444444'; //phone number readback
   console.log("Phone link updated");
 }
 
