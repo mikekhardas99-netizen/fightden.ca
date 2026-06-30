@@ -44,8 +44,9 @@ div.gridLayout
 div.footer
 {
     padding-top: 10px;
-    place-items: center;
-    align-items: end; /* Vertically aligns all items to the bottom */
+    padding-bottom: 10px;
+    align-items: center; /* vertical */
+    justify-items: center; /* horizontal */
     background-color: #f1f1f1!important;
 }
 .fightdenred
@@ -80,7 +81,9 @@ h1.pagetitle
 }
 .sitecredits
 {
+    padding: 10px;
     color: #BBBBBB;
+    justify-self: center;
 }
 
 @media (max-width: 375px)
