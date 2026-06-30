@@ -43,8 +43,11 @@ window.onclick = function(event) {
 
 const canvas = document.getElementById("cnvPhone");
 const ctx = canvas.getContext("2d");
-ctx.font = "16px Arial";
-ctx.fillText("416-845-1532",0,20);
+window.devicePixelRatio=2;
+ctx.font = "16px Verdana";
+ctx.fillStyle = "#000000";
+ctx.textBaseline = 'middle';
+ctx.fillText("416-845-1532",0,22);
 
 function generateBrowserNonce() {
     const array = new Uint8Array(16);
