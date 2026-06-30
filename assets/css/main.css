@@ -1,0 +1,26 @@
+.fightdenred
+{
+ background-color: red;
+}
+.fightdenlogo
+{
+    width: 246px;
+    height: 40px;
+}
+.fdlogobg
+{
+    background-image: linear-gradient(to right, red, #000000 99%);
+}
+.fdgradientbg
+{
+    background-image: linear-gradient(to right, red 20%, #000000 30%); 
+}
+
+.navtext
+{
+    color: #FFFFFF!important;
+}
+.navbgcolor
+{
+    background-color: #000000!important;
+}
