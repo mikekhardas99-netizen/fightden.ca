@@ -1,3 +1,20 @@
+@font-face
+{
+  font-family: 'Open Sans';
+  src: url('../webfonts/OpenSans-ExtraBold.ttf');
+  /*font-style: normal;*/
+  font-display: swap;
+}
+@font-face
+{
+    font-family: 'Lato';
+    src: url('../webfonts/lato-latin-900-normal.woff2') format('woff2');
+    font-weight: 400;
+    ascent-override: 0.968;
+    descent-override: 0.29;
+    line-gap-override: 0;
+    font-display: swap;
+}
 body
 {
     min-width: 375px;
@@ -28,3 +45,9 @@ body
 {
     background-color: #000000!important;
 }
+h1.pagetitle
+{
+    font-size: 80pt;
+    font-family: 'Open Sans', 'Verdana';
+}
+.mySlides {display: none}
