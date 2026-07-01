@@ -28,7 +28,7 @@ body
 }
 .pageheader
 {
-    margin-top: 32px;
+    padding-top: 40px;
     place-items: center; /* Centers horizontally */
     /* align-self: center; */
     background-image: url('../../images/fightdenbg.webp');
@@ -48,6 +48,15 @@ div.footer
     align-items: center; /* vertical */
     justify-items: center; /* horizontal */
     background-color: #f1f1f1!important;
+}
+.card
+{
+    max-width: 400px;
+    background-color: rgb(221 221 221 / 90%);
+    margin-bottom: 10px;
+    padding: 5px;
+    box-shadow: 4px 4px 15px black;
+    color: #000000;
 }
 .fightdenred
 {
