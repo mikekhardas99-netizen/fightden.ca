@@ -95,30 +95,32 @@ h1.pagetitle
 }
 .striped-bg1 {
     background-color: black;
-    background-image: repeating-linear-gradient(
+    /* background-image: repeating-linear-gradient(
     -45deg,
     transparent 10px,
     grey 20px,
     transparent 10px
-  );
+  ); */
   }
 .mainheader
 {
     align-items: center; /* vertical */
     justify-items: center; /* horizontal */
+    color: #FFFFFF;
 }
 h2.mainheader{
     position: relative;
 }
 h2.mainheader::after {
     content: '';
-    position: absolute;
-    left: 0;
-    bottom: -4px;        /* Positions the line slightly below the text */
+    display: block;
+    position: relative;
+    justify-self: unsafe center;
+    bottom: 6px;        /* Positions the line slightly below the text */
     width: 50%;          /* Dictates how much of the text is underlined */
     height: 4px;         /* Determines the thickness of the line */
     background-color: var(--fightden-red);
-  }
+}
 @media (max-width: 375px)
 {
     h1.pagetitle
