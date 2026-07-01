@@ -29,6 +29,11 @@ body
     min-width: 375px;
     font-family: 'Open Sans', 'Verdana'!important;
 }
+a:hover {
+    border-bottom-color: transparent;
+    color: var(--fightden-red) !important;
+    text-decoration: none;
+}
 .pageheader
 {
     padding-top: 40px;

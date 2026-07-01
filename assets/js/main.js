@@ -26,6 +26,22 @@ window.onclick = function(event) {
   }
 }
 
+async function sharePage()
+{
+	const shareData = {
+		title: 'Fight Den',
+		url: 'https://fightden.ca'
+	};
+
+  //window.location.hostname
+	
+	try {
+		await navigator.share(shareData);
+	} catch (err) {
+		console.info(`${err}`);
+	}
+}
+
 const canvas = document.getElementById("cnvPhone");
 const ctx = canvas.getContext("2d");
 window.devicePixelRatio=2;

@@ -616,6 +616,9 @@
  /* Font Awesome uses the Unicode Private Use Area (PUA) to ensure screen
     readers do not read off random characters that represent icons */
 
+    .fa-share-nodes {
+      --fa: "\f1e0";
+}
     .fa-bars {
       --fa: "\f0c9";
     }
@@ -644,7 +647,7 @@
   --fa: "\f0e0";
 }
 
-    :root, :host {
+  :root, :host {
    --fa-family-brands: "Font Awesome 7 Brands";
    --fa-font-brands: normal 400 1em/1 var(--fa-family-brands);
  }

@@ -81,12 +81,14 @@
   </div>
   <div class="footer">
     <footer>
-      <div style="justify-self: center;"><i class="fa-brands fa-square-x-twitter fa-xl w3-hover-opacity" title="X"></i>
-      <a href="https://instagram.com/fight_den" target="_blank" title="Instgram"><i class="fa-brands fa-instagram fa-xl w3-hover-opacity"></i></a>
-      <a href="mailto:inquiries@fightden.ca"><i class="fa-solid fa-envelope fa-xl" title="Email"></i></a>
-      <a id="aTel" href="#generate"><i class="fa-solid fa-phone fa-xl w3-hover-opacity" id="faPhone" title="Phone"></i><canvas id="cnvPhone" width="130" height="30"></canvas></a>
+      <div style="justify-self: center;">
+       <a href="#"><i class="fa-brands fa-square-x-twitter fa-xl" title="X"></a></i>
+       <a href="https://instagram.com/fight_den" target="_blank" title="Instgram"><i class="fa-brands fa-instagram fa-xl"></i></a>
+       <a href="mailto:inquiries@fightden.ca"><i class="fa-solid fa-envelope fa-xl" title="Email"></i></a>
+       <a href="#"><i id="iShareNodes" class="fa-regular fa-share-nodes fa-xl" title="Share Page"></i></a>
+       <a id="aTel" href="#generate"><i class="fa-solid fa-phone fa-xl" id="faPhone" title="Phone"></i><canvas id="cnvPhone" width="130" height="30"></canvas></a>
       </div>
-      <div class="w3-small sitecredits">Website by: <a href="https://jax.tech">Jax Tech</a></div>
+      <div class="w3-small sitecredits">Website by: <a href="https://jax.tech">Jax Tech</a> | Env: <span id="spnEnv"></span></div>
     </footer>
   </div>
 </div>
@@ -102,5 +104,9 @@
       </div>
  End Page Content -->
   <script src="assets/js/main.js" nonce="mJvK11NyrlXnbPiR7YgR7g==" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => { document.getElementById('spnEnv').innerText = window.location.hostname.includes('fightden.ca') ? 'PROD' : 'DEV' });
+    document.getElementById("iShareNodes").addEventListener('click', (e) => { sharePage(); });
+  </script>
  </body>
 </html>
