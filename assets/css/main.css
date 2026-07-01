@@ -107,14 +107,17 @@ h1.pagetitle
     transparent 10px
   ); */
   }
-.mainheader
+.main
 {
     align-items: center; /* vertical */
     justify-items: center; /* horizontal */
     color: #FFFFFF;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 h2.mainheader{
     position: relative;
+    text-align: center;
 }
 h2.mainheader::after {
     content: '';
