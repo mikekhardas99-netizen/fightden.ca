@@ -13,6 +13,32 @@
    <link rel="stylesheet" href="assets/css/main.css" nonce="mJvK11NyrlXnbPiR7YgR7g==">
    <link rel="stylesheet" href="assets/css/w3.css" nonce="mJvK11NyrlXnbPiR7YgR7g==">
    <link rel="stylesheet" href="assets/css/facustom.css" nonce="mJvK11NyrlXnbPiR7YgR7g==">
+   <script>
+  (function(h,o,u,n,d) {
+    h=h[d]=h[d]||{q:[],onReady:function(c){h.q.push(c)}}
+    d=o.createElement(u);d.async=1;d.src=n;d.crossOrigin=''
+    n=o.getElementsByTagName(u)[0];n.parentNode.insertBefore(d,n)
+  })(window,document,'script','https://www.datadoghq-browser-agent.com/us1/v7/datadog-rum.js','DD_RUM')
+  window.DD_RUM.onReady(function() {
+    window.DD_RUM.init({
+        applicationId: '8e854b1d-491f-46be-9a2d-60592ecd22c4',
+        clientToken: 'pubaf33994311a2972872ad6a21bb0c3e61',
+        site: 'datadoghq.com',
+        service: 'fightden.ca',
+        env: 'dev',				// e.g. 'prod', 'staging-1', 'dev'
+        version: '1.0.0',	// e.g. '1.0.0'
+        sessionSampleRate: 100,			// capture 100% of sessions
+        sessionReplaySampleRate: 20,	// capture 20% of sessions with replay
+        trackResources: true,			// Enable Resource tracking
+        trackUserInteractions: true,	// Enable Action tracking
+        trackLongTasks: true,			// Enable Long Tasks tracking
+    
+        // ----- Recommended Options -----
+        // allowedTracingUrls: '<BACKEND_URL>',		// Enable distributed tracing
+        // defaultPrivacyLevel: 'mask-user-input',	// 'mask-user-input' | 'allow' | 'mask'
+    });
+  })
+</script>
   <style nonce="mJvK11NyrlXnbPiR7YgR7g==">
   
   </style>
@@ -77,9 +103,14 @@
   </div>
   <div class="main striped-bg1">
     <h2 class="mainheader">WELCOME TO FIGHT DEN</h2>
+    <div class="mainflex">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+    </div>
     <h3>Sensei Mike Khardas Teaches Krav Maga To Rafael Domingos BJJ Black Belt Under Demian Maia</h3>
     <p>This is a fun clip from a crash course in Krav Maga with Sensei Mike Khardas and Professional Brazilian Jiu Jitsu competitor/ Demian Maia Black Belt Rafael Domingos. Glad Frankie Forza and Rafael and all the other BJJ ninjas enjoyed the techniques. BJJ black belts are Mcdojo and Bullshido proof, so having them praise the techniques is awesome. We are bringing street safety and weapons disarms back to BJJ and Jiu Jitsu one MMA school at a time!</p>
-    
+    <iframe width="300" height="169" src="https://www.youtube.com/embed/QeSGjfzvS8I?si=TCb9ney_Xa04doh_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
   </div>
   <div class="footer">
     <footer>
