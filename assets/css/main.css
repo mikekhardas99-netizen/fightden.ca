@@ -1,21 +1,23 @@
 @font-face
 {
-  font-family: 'Open Sans EB';
-  src: url('../webfonts/OpenSans-ExtraBold.ttf');
-  font-display: swap;
-}
-@font-face
-{
   font-family: 'Open Sans';
   src: url('../webfonts/open-sans-latin-400-normal.woff2');
   font-style: normal;
   font-display: swap;
+  font-weight: 400;
+}
+@font-face
+{
+  font-family: 'Open Sans';
+  src: url('../webfonts/open-sans-latin-800-normal.woff2');
+  font-style: normal;
+  font-display: swap;
+  font-weight: 800;
 }
 @font-face
 {
     font-family: 'Lato';
     src: url('../webfonts/lato-latin-900-normal.woff2') format('woff2');
-    font-weight: 400;
     ascent-override: 0.968;
     descent-override: 0.29;
     line-gap-override: 0;
@@ -57,7 +59,7 @@ div.footer
     justify-items: center; /* horizontal */
     background-color: #f1f1f1!important;
 }
-.card
+/* .card
 {
     max-width: 400px;
     background-color: rgb(221 221 221 / 90%);
@@ -65,7 +67,7 @@ div.footer
     padding: 5px;
     box-shadow: 4px 4px 15px black;
     color: #000000;
-}
+} */
 .fightdenlogo
 {
     width: 246px;
@@ -78,6 +80,10 @@ div.footer
 .fdgradientbg
 {
     background-image: linear-gradient(to right, var(--fightden-red) 20%, #000000 30%); 
+}
+.bold
+{
+    font-weight: bold!important;
 }
 .navtext
 {

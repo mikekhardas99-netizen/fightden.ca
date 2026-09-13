@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Fight Den (Dev)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+   <!--<link rel="preload" href="assets/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+   <link rel="preload" href="assets/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+   <link rel="preload" href="assets/fonts/open-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin=>
+   <link rel="preload" href="assets/css/main.css" as="style" type="text/css">
+   <link rel="preload" href="assets/css/w3.css" as="style" type="text/css">
+   <link rel="preload" href="assets/css/facustom.css" as="style" type="text/css">-->
+   <link rel="stylesheet" href="assets/css/main.css" nonce="mJvK11NyrlXnbPiR7YgR7g==">
+   <!-- <link rel="stylesheet" href="assets/css/w3.css" nonce="mJvK11NyrlXnbPiR7YgR7g=="> -->
+   <link rel="stylesheet" href="assets/css/facustom.css" nonce="mJvK11NyrlXnbPiR7YgR7g==">
+  <style nonce="mJvK11NyrlXnbPiR7YgR7g==">
+body
+{
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+}
+.nav
+{
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+}
+.title
+{
+    padding-left: 5px;
+}
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+}
+.card
+{
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+    width: 300px;
+    height: 500px;
+    align-items: center;
+    background-color: rgb(221 221 221 / 90%);
+    margin-bottom: 10px;
+    padding: 5px;
+    box-shadow: 4px 4px 15px black;
+    color: #000000;
+}
+.cart
+{
+    background-color: #000000;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+.cardimage
+{
+    width: 300px;
+    height: 600px;
+    object-fit: cover;
+    /* object-position: center 20%; Shifts crop vertically */
+}
+.shop-item-grid-container {
+    display: grid;
+    grid-template-rows: auto 20px 30px 50px;
+    gap: 0px;
+    justify-content: center;
+    height: 100%;
+}
+.shop-item-row
+{
+    align-items: start;
+    padding-top: 5px;
+    /* border: 1px solid #000000; */
+}
+.last-shop-item-card {
+    align-content: end;
+    justify-content: center;
+    /* border: 1px solid #000000; */
+}
+  </style>
+  <link rel="icon" type="image/png" href="images/favicon.png">
+ </head>
+ <body>
+  <div class="fdgradientbg nav">
+   <a class="" href="https://fightden.ca"><img src="images/fightden_logo.webp" fetchpriority=high alt="Fight Den Logo" class="fightdenlogo" /></a>
+  </div>
+  <h1 class="title">SHOP</h1>
+  <div class="flex-container">
+   <div class="card">
+    <img src="images/shop/corp_seminars.webp" alt="" class="cardimage">
+    <div class="shop-item-grid-container">
+      <div class="bold">INTRO GROUP SEMINAR</div>
+      <div>1 to 10 participants for one hour</div>
+      <div class="shop-item-row">$1,0000.00</div>
+      <div class="last-shop-item-card"><button class="cart">ADD TO CART</button></div>
+    </div>
+   </div>
+   <div class="card">
+    <img src="images/shop/digital_products.webp" alt="" class="cardimage">
+    <div class="shop-item-grid-container">
+      <div class="bold">JIU-JITSU BASED KRAV MAGA MASTERY: HOME TUTORIAL & INSTRUCTOR COURSE</div>
+      <div>Home based video tutorial</div>
+      <div class="shop-item-row">$75.00</div>
+      <div class="last-shop-item-card"><button class="cart">ADD TO CART</button></div>
+    </div>
+   </div>
+   <div class="card">
+    <img src="images/shop/VIPKravShirt.webp" alt="" class="cardimage">
+    <div class="shop-item-grid-container">
+      <div class="bold">VIP KRAV BRANDED T-SHIRT</div>
+      <div>Available in various sizes</div>
+      <div class="shop-item-row">$30.00</div>
+      <div class="last-shop-item-card"><button class="cart">ADD TO CART</button></div>
+    </div>
+   </div>
+
+  </div>
+ </body>
+</html>
