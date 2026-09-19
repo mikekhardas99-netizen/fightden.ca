@@ -40,8 +40,8 @@ body
 {
     display: flex;
     flex-direction: column;
-    min-width: 300px;
-    width: 300px;
+    min-width: 250px;
+    width: 250px;
     height: 500px;
     align-items: center;
     background-color: rgb(221 221 221 / 90%);
@@ -60,8 +60,8 @@ body
 }
 .cardimage
 {
-    width: 300px;
-    height: 400px;
+    width: 250px;
+    height: 250px;
     object-fit: cover;
     /* object-position: center 20%; Shifts crop vertically */
 }
@@ -70,15 +70,22 @@ body
     grid-template-rows: auto 20px 30px 50px;
     gap: 0px;
     justify-content: center;
-    height: 320px;
+    height: 250px;
 }
 .shop-item-row
 {
-    align-items: start;
-    padding-top: 5px;
+    display: flex;
+    min-width: 250px;
+    width: 250px;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: center;
+    
+    padding: 0px 5px 0px 5px; /* top right bottom left */
+    /* padding-top: 5px; */
     /* border: 1px solid #000000; */
 }
-.last-shop-item-card {
+.shop-item-add-to-cart-row {
     align-content: end;
     justify-content: center;
     /* border: 1px solid #000000; */
@@ -95,28 +102,28 @@ body
    <div class="card">
     <img src="images/shop/corp_seminars.webp" alt="" class="cardimage">
     <div class="shop-item-grid-container">
-      <div class="bold">INTRO GROUP SEMINAR</div>
-      <div>1 to 10 participants for one hour</div>
+      <div class="shop-item-row bold">INTRO GROUP SEMINAR</div>
+      <div class="shop-item-row">1 to 10 participants for one hour</div>
       <div class="shop-item-row bold">$1,0000.00</div>
-      <div class="last-shop-item-card"><button class="cart">ADD TO CART</button></div>
+      <div class="shop-item-row shop-item-add-to-cart-row"><button class="cart">ADD TO CART</button></div>
     </div>
    </div>
    <div class="card">
     <img src="images/shop/digital_products.webp" alt="" class="cardimage">
     <div class="shop-item-grid-container">
-      <div class="bold">JIU-JITSU BASED KRAV MAGA MASTERY: HOME TUTORIAL & INSTRUCTOR COURSE</div>
-      <div>Home based video tutorial</div>
+      <div class="shop-item-row bold">JIU-JITSU BASED KRAV MAGA MASTERY: HOME TUTORIAL & INSTRUCTOR COURSE</div>
+      <div class="shop-item-row">Home based video tutorial</div>
       <div class="shop-item-row bold">$75.00</div>
-      <div class="last-shop-item-card"><button class="cart">ADD TO CART</button></div>
+      <div class="shop-item-row shop-item-add-to-cart-row"><button class="cart">ADD TO CART</button></div>
     </div>
    </div>
    <div class="card">
     <img src="images/shop/VIPKravShirt.webp" alt="" class="cardimage">
     <div class="shop-item-grid-container">
-      <div class="bold">VIP KRAV BRANDED T-SHIRT</div>
-      <div>Available in various sizes</div>
-      <div class="shop-item-row bold">$30.00</div>
-      <div class="last-shop-item-card"><button class="cart">ADD TO CART</button></div>
+      <div class="shop-item-row bold">VIP KRAV BRANDED T-SHIRT</div>
+      <div class="shop-item-row">Available in various sizes</div>
+      <div class="shop-item-row" class="shop-item-row bold">$30.00</div>
+      <div class="shop-item-row shop-item-add-to-cart-row"><button class="cart">ADD TO CART</button></div>
     </div>
    </div>
 
