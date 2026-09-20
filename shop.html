@@ -13,6 +13,50 @@
    <link rel="stylesheet" href="assets/css/main.css" nonce="mJvK11NyrlXnbPiR7YgR7g==">
    <!-- <link rel="stylesheet" href="assets/css/w3.css" nonce="mJvK11NyrlXnbPiR7YgR7g=="> -->
    <link rel="stylesheet" href="assets/css/facustom.css" nonce="mJvK11NyrlXnbPiR7YgR7g==">
+   <link rel="stylesheet" href="assets/css/all.css" nonce="mJvK11NyrlXnbPiR7YgR7g==">
+   <script>
+    function decreaseQty(button) {
+        const objInput = button.nextElementSibling;
+        if (objInput.value > 0)
+        {
+            objInput.value = Math.abs(objInput.value) - 1;
+        }
+        else
+        {
+            objInput.value = 0;
+        }
+    }
+
+    function increaseQty(button) {
+        const objInput = button.previousElementSibling;
+        objInput.value = Math.abs(objInput.value) + 1;
+    }
+
+    function addToCart(button) {
+        const itemId = button.getAttribute("data-item");
+        const itemDescr = button.getAttribute("data-descr");
+        const objInput = button.parentElement.previousElementSibling.querySelector(".itemqty");
+        let itemQty = objInput.value;
+        if (itemQty > 0)
+        {
+            console.log("Added " + itemQty + " of " + itemDescr + " to cart. Data-item: " + itemId);
+            const existingQty = sessionStorage.getItem("Item" + itemId);
+            console.log("Existing quantity in cart: " + existingQty);
+            if (existingQty !== null)
+            {
+                itemQty = parseInt(existingQty) + parseInt(itemQty);
+            }
+            sessionStorage.setItem("Item" + itemId, itemQty);
+            console.log("Updated quantity: " + itemQty);
+
+            // Here you would typically add the item to the cart in your application logic
+        }
+        else
+        {
+            alert("Please select a quantity greater than 0.");
+        }
+    }
+   </script>
   <style nonce="mJvK11NyrlXnbPiR7YgR7g==">
 body
 {
@@ -42,7 +86,7 @@ body
     flex-direction: column;
     min-width: 250px;
     width: 250px;
-    height: 500px;
+    height: 450px;
     align-items: center;
     background-color: rgb(221 221 221 / 90%);
     margin-bottom: 10px;
@@ -58,6 +102,13 @@ body
     border: none;
     cursor: pointer;
 }
+.cart::before {
+  font-family: "Font Awesome 7 Free"; 
+  /* 2. Set the weight (900 is required for Solid icons) */
+  font-weight: 900;
+  content: "\f07a";
+  margin-right: 8px;
+}
 .cardimage
 {
     width: 250px;
@@ -67,7 +118,7 @@ body
 }
 .shop-item-grid-container {
     display: grid;
-    grid-template-rows: auto 20px 30px 50px;
+    grid-template-rows: auto 20px 30px 30px 50px;
     gap: 0px;
     justify-content: center;
     height: 250px;
@@ -80,7 +131,7 @@ body
     align-items: flex-start;
     justify-content: center;
     text-align: center;
-    
+    /* background-color: lightgreen; */
     padding: 0px 5px 0px 5px; /* top right bottom left */
     /* padding-top: 5px; */
     /* border: 1px solid #000000; */
@@ -105,7 +156,8 @@ body
       <div class="shop-item-row bold">INTRO GROUP SEMINAR</div>
       <div class="shop-item-row">1 to 10 participants for one hour</div>
       <div class="shop-item-row bold">$1,0000.00</div>
-      <div class="shop-item-row shop-item-add-to-cart-row"><button class="cart">ADD TO CART</button></div>
+      <div class="shop-item-row bold">Qty: <input type="button" class="qtyminus" value="-" onclick="decreaseQty(this);"><input type="text" id="txtItem1" class="itemqty" maxlength="3" size="3" inputmode="numeric" pattern="[0-9]*" oninput="this.value = this.value.replace(/\D/g, '')"><input type="button" class="qtyminus" value="+" onclick="increaseQty(this);"></div>
+      <div class="shop-item-row shop-item-add-to-cart-row"><button class="cart" data-item="1" data-descr="Group Seminar" onclick="addToCart(this);">ADD TO CART</button></div>
     </div>
    </div>
    <div class="card">
@@ -114,7 +166,8 @@ body
       <div class="shop-item-row bold">JIU-JITSU BASED KRAV MAGA MASTERY: HOME TUTORIAL & INSTRUCTOR COURSE</div>
       <div class="shop-item-row">Home based video tutorial</div>
       <div class="shop-item-row bold">$75.00</div>
-      <div class="shop-item-row shop-item-add-to-cart-row"><button class="cart">ADD TO CART</button></div>
+      <div class="shop-item-row bold">Qty: <input type="button" class="qtyminus" value="-" onclick="decreaseQty(this);"><input type="text" id="txtItem2" class="itemqty" maxlength="3" size="3" inputmode="numeric" pattern="[0-9]*" oninput="this.value = this.value.replace(/\D/g, '')"><input type="button" class="qtyminus" value="+" onclick="increaseQty(this);"></div>
+      <div class="shop-item-row shop-item-add-to-cart-row"><button class="cart" data-item="2" data-descr="Online Course" onclick="addToCart(this);">ADD TO CART</button></div>
     </div>
    </div>
    <div class="card">
@@ -122,8 +175,9 @@ body
     <div class="shop-item-grid-container">
       <div class="shop-item-row bold">VIP KRAV BRANDED T-SHIRT</div>
       <div class="shop-item-row">Available in various sizes</div>
-      <div class="shop-item-row" class="shop-item-row bold">$30.00</div>
-      <div class="shop-item-row shop-item-add-to-cart-row"><button class="cart">ADD TO CART</button></div>
+      <div class="shop-item-row bold">$40.00</div>
+      <div class="shop-item-row bold">Qty: <input type="button" class="qtyminus" value="-" onclick="decreaseQty(this);"><input type="text" id="txtItem3" class="itemqty" maxlength="3" size="3" inputmode="numeric" pattern="[0-9]*" oninput="this.value = this.value.replace(/\D/g, '')"><input type="button" class="qtyminus" value="+" onclick="increaseQty(this);"></div>
+      <div class="shop-item-row shop-item-add-to-cart-row"><button class="cart" data-item="3" data-descr="VIP Krav Maga T-Shirt" onclick="addToCart(this);">ADD TO CART</button></div>
     </div>
    </div>
 
