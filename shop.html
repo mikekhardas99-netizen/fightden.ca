@@ -41,13 +41,33 @@
         {
             console.log("Added " + itemQty + " of " + itemDescr + " to cart. Data-item: " + itemId);
             const existingQty = sessionStorage.getItem("Item" + itemId);
-            console.log("Existing quantity in cart: " + existingQty);
+            //console.log("Existing quantity in cart: " + existingQty);
             if (existingQty !== null)
             {
                 itemQty = parseInt(existingQty) + parseInt(itemQty);
             }
-            sessionStorage.setItem("Item" + itemId, itemQty);
-            console.log("Updated quantity: " + itemQty);
+            try
+            {
+                sessionStorage.setItem("Item" + itemId, itemQty);
+                objInput.value = 0; // Reset the quantity input field after adding to cart
+                console.log("Updated quantity: " + itemQty);
+            }
+            catch (e)
+            {
+                console.error("Error storing item in sessionStorage: " + e);
+                if (e instanceof DOMException &&
+                    (e.name === 'QuotaExceededError' || 
+                    e.name === 'NS_ERROR_DOM_QUOTA_REACHED' || // Firefox specific
+                    e.code === 22 || 
+                    e.code === 1014)
+                    ) {
+                        console.warn('sessionStorage limit reached. Consider clearing old data.');
+                        // Optional: clear oldest data or fallback to memory
+                } else {
+                    // 2. Handle SecurityError (e.g., blocked by private mode or browser settings)
+                    console.error('sessionStorage is disabled or inaccessible:', error.message);
+                }
+            }
 
             // Here you would typically add the item to the cart in your application logic
         }
