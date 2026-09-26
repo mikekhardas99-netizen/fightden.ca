@@ -1,3 +1,8 @@
+//globally scoped objects
+const objProducts = {
+    products: {}
+};
+
 function decreaseQty(button)
 {
     const objInput = button.nextElementSibling;
@@ -25,18 +30,20 @@ function addToCart(button)
     let itemQty = objInput.value;
     if (itemQty > 0)
     {
-        console.log("Added " + itemQty + " of " + itemDescr + " to cart. Data-item: " + itemId);
+        //console.log("Added " + itemQty + " of " + itemDescr + " to cart. Data-item: " + itemId);
         const existingQty = sessionStorage.getItem("Item" + itemId);
         //console.log("Existing quantity in cart: " + existingQty);
         if (existingQty !== null)
         {
             itemQty = parseInt(existingQty) + parseInt(itemQty);
         }
+
         try
         {
             sessionStorage.setItem("Item" + itemId, itemQty);
             objInput.value = 0; // Reset the quantity input field after adding to cart
-            console.log("Updated quantity: " + itemQty);
+            //console.log("Updated quantity: " + itemQty);
+            calcCart();
         }
         catch (e)
         {
@@ -65,10 +72,6 @@ function addToCart(button)
 
 function loadProducts()
 {
-    const objProducts = {
-        products: {}
-    };
-
     const jsonProduct1 = {};
     jsonProduct1.productid = 1;
     jsonProduct1.name = "Private Lesson";
@@ -92,12 +95,36 @@ function loadProducts()
     objProducts.products[1] = jsonProduct1;
     objProducts.products[2] = jsonProduct2;
     objProducts.products[3] = jsonProduct3;
-    console.log(objProducts);
+    //console.log("Product count: " + Object.keys(objProducts.products).length);
     console.log(objProducts.products[2].cost);
     
-
 
     //let jsonProduct1 = '{"productid": 1, "name": "Private Lesson", "cost": 200}';
     //let jsonProduct2 = '{"productid": 2, "name": "Single Drop In Class", "cost": 30}';
     //let userObject = JSON.parse(jsonProduct1);
+}
+
+function calcCart()
+{
+    const sortedKeys = Object.keys(sessionStorage).sort();
+
+    for (const key of sortedKeys)
+    {
+        if (key.startsWith("Item"))
+        {
+            //console.log(`Key: ${key}`);
+            const itemId = key.replace("Item", "");
+            const itemQty = sessionStorage.getItem(key);
+            //console.log(`Item ID: ${itemId}, Quantity: ${itemQty}`);
+            const product = objProducts.products[itemId];
+            if (product) {
+                const itemCost = product.cost * itemQty;
+                console.log(`Item ID: ${itemId}, Quantity: ${itemQty}, Total Cost: ${itemCost}`);
+            }
+        }
+        
+        
+    }
+
+    //sessionStorage.getItem("Item" + itemId)
 }
