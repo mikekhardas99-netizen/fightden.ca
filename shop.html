@@ -14,70 +14,8 @@
    <!-- <link rel="stylesheet" href="assets/css/w3.css" nonce="mJvK11NyrlXnbPiR7YgR7g=="> -->
    <link rel="stylesheet" href="assets/css/facustom.css" nonce="mJvK11NyrlXnbPiR7YgR7g==">
    <link rel="stylesheet" href="assets/css/all.css" nonce="mJvK11NyrlXnbPiR7YgR7g==">
-   <script>
-    function decreaseQty(button) {
-        const objInput = button.nextElementSibling;
-        if (objInput.value > 0)
-        {
-            objInput.value = Math.abs(objInput.value) - 1;
-        }
-        else
-        {
-            objInput.value = 0;
-        }
-    }
-
-    function increaseQty(button) {
-        const objInput = button.previousElementSibling;
-        objInput.value = Math.abs(objInput.value) + 1;
-    }
-
-    function addToCart(button) {
-        const itemId = button.getAttribute("data-item");
-        const itemDescr = button.getAttribute("data-descr");
-        const objInput = button.parentElement.previousElementSibling.querySelector(".itemqty");
-        let itemQty = objInput.value;
-        if (itemQty > 0)
-        {
-            console.log("Added " + itemQty + " of " + itemDescr + " to cart. Data-item: " + itemId);
-            const existingQty = sessionStorage.getItem("Item" + itemId);
-            //console.log("Existing quantity in cart: " + existingQty);
-            if (existingQty !== null)
-            {
-                itemQty = parseInt(existingQty) + parseInt(itemQty);
-            }
-            try
-            {
-                sessionStorage.setItem("Item" + itemId, itemQty);
-                objInput.value = 0; // Reset the quantity input field after adding to cart
-                console.log("Updated quantity: " + itemQty);
-            }
-            catch (e)
-            {
-                console.error("Error storing item in sessionStorage: " + e);
-                if (e instanceof DOMException &&
-                    (e.name === 'QuotaExceededError' || 
-                    e.name === 'NS_ERROR_DOM_QUOTA_REACHED' || // Firefox specific
-                    e.code === 22 || 
-                    e.code === 1014)
-                    ) {
-                        console.warn('sessionStorage limit reached. Consider clearing old data.');
-                        // Optional: clear oldest data or fallback to memory
-                } else {
-                    // 2. Handle SecurityError (e.g., blocked by private mode or browser settings)
-                    console.error('sessionStorage is disabled or inaccessible:', error.message);
-                }
-            }
-
-            // Here you would typically add the item to the cart in your application logic
-        }
-        else
-        {
-            alert("Please select a quantity greater than 0.");
-        }
-    }
-   </script>
-  <style nonce="mJvK11NyrlXnbPiR7YgR7g==">
+   <script src="assets/js/cart.js" nonce="mJvK11NyrlXnbPiR7YgR7g=="></script>
+   <style nonce="mJvK11NyrlXnbPiR7YgR7g==">
 body
 {
     margin: 0 0 0 0;
@@ -91,6 +29,7 @@ body
 .title
 {
     padding-left: 5px;
+    text-align: center;
 }
 .flex-container {
     display: flex;
@@ -114,7 +53,20 @@ body
     box-shadow: 4px 4px 15px black;
     color: #000000;
 }
-.cart
+div.cart
+{
+    display: flex;
+    flex-direction: column;
+    min-width: 250px;
+    width: 250px;
+    height: 450px;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 5px;
+    border: 1px solid #000000;
+    color: #000000;
+}
+button.cart
 {
     background-color: #000000;
     color: white;
@@ -122,7 +74,7 @@ body
     border: none;
     cursor: pointer;
 }
-.cart::before {
+button.cart::before {
   font-family: "Font Awesome 7 Free"; 
   /* 2. Set the weight (900 is required for Solid icons) */
   font-weight: 900;
@@ -135,6 +87,34 @@ body
     height: 250px;
     object-fit: cover;
     /* object-position: center 20%; Shifts crop vertically */
+}
+.cart-container
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0px;
+    border: 1px solid #000000;
+    width: 250px;
+    margin-inline: auto;
+    margin-top: 20px;
+}
+.cart-title
+{
+    grid-column: 1 / span 3;
+    text-align: center;
+    font-weight: bold;
+}
+.cart-item-descr
+{
+    text-align: left;
+}
+.cart-item-qty
+{
+    text-align: right;
+}
+.cart-item-cost
+{
+    text-align: right;
 }
 .shop-item-grid-container {
     display: grid;
@@ -171,6 +151,16 @@ body
   <h1 class="title">SHOP</h1>
   <div class="flex-container">
    <div class="card">
+    <img src="images/shop/privatelesson.webp" alt="" class="cardimage">
+    <div class="shop-item-grid-container">
+      <div class="shop-item-row bold">PRIVATE LESSON</div>
+      <div class="shop-item-row">One on One private lesson</div>
+      <div class="shop-item-row bold">$200.00</div>
+      <div class="shop-item-row bold">Qty: <input type="button" class="qtyminus" value="-" onclick="decreaseQty(this);"><input type="text" id="txtItem1" class="itemqty" maxlength="3" size="3" inputmode="numeric" pattern="[0-9]*" oninput="this.value = this.value.replace(/\D/g, '')"><input type="button" class="qtyminus" value="+" onclick="increaseQty(this);"></div>
+      <div class="shop-item-row shop-item-add-to-cart-row"><button class="cart" data-item="1" data-descr="Group Seminar" onclick="addToCart(this);">ADD TO CART</button></div>
+    </div>
+   </div>
+    <div class="card">
     <img src="images/shop/corp_seminars.webp" alt="" class="cardimage">
     <div class="shop-item-grid-container">
       <div class="shop-item-row bold">INTRO GROUP SEMINAR</div>
@@ -200,7 +190,21 @@ body
       <div class="shop-item-row shop-item-add-to-cart-row"><button class="cart" data-item="3" data-descr="VIP Krav Maga T-Shirt" onclick="addToCart(this);">ADD TO CART</button></div>
     </div>
    </div>
-
   </div>
+  <div class="cart-container">
+      <div class="item cart-title">Your Order</div>
+      <div class="item cart-item-descr">Description</div>
+      <div class="item cart-item-qty">Qty</div>
+      <div class="item cart-item-cost">Cost</div>
+      <div class="item cart-item-descr">1</div>
+      <div class="item cart-item-qty">2</div>
+      <div class="item cart-item-cost">3</div>
+      <div class="item cart-item-descr">4</div>
+      <div class="item cart-item-qty">5</div>
+      <div class="item cart-item-cost">6</div>
+  </div>
+  <script nonce="mJvK11NyrlXnbPiR7YgR7g==">
+    document.addEventListener('DOMContentLoaded', () => { loadProducts(); });
+   </script>
  </body>
 </html>
