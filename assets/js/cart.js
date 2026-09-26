@@ -83,8 +83,15 @@ function loadProducts()
     const jsonp2 = JSON.stringify(jsonProduct2);
     //console.log(jsonp1);
 
+    const jsonProduct3 = {};
+    jsonProduct3.productid = 3;
+    jsonProduct3.name = "Intro Group Seminar";
+    jsonProduct3.cost = 1000;
+    const jsonp3 = JSON.stringify(jsonProduct3);
+
     objProducts.products[1] = jsonProduct1;
     objProducts.products[2] = jsonProduct2;
+    objProducts.products[3] = jsonProduct3;
     console.log(objProducts);
     console.log(objProducts.products[2].cost);
     
