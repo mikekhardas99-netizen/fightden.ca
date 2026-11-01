@@ -1,0 +1,193 @@
+/* Root elements do not load in shadow DOM */
+/* :root {
+    --menubgcolor: #000000;
+} */
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  html, body
+  {
+    min-width: 200px;
+  }
+  
+  /* Navbar Layout */
+  .navbar {
+    background-color: var(--menubgcolor);
+    height: 60px;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    /* overflow: auto; */
+  }
+  
+  .nav-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+    margin: 0 0 0 0;
+    padding: 0 20px;
+  }
+  
+  .nav-logo {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    margin-right: auto;
+    white-space: nowrap;
+  }
+  
+  /* Desktop Menu Links */
+  .nav-menu {
+    display: flex;
+    list-style: none;
+    align-items: center;
+  }
+  
+  .nav-item {
+    position: relative; /* Context for absolute positioned submenu */
+  }
+  
+  .nav-links, .submenu-links {
+    display: block;
+    text-decoration: none;
+    color: #FFFFFF;
+    padding-right: 20px;
+    position: relative;
+    /* transition: all 0.3s ease; */
+  }
+  
+.nav-links:hover, .submenu-links:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-decoration-color: red;
+}
+  
+/* Dropdown Submenu Layout (non-mobile) */
+.submenu {
+    display: none; /* Hidden by default */
+    position: absolute;
+    margin-top: 0px;
+    top: 100%;
+    left: 0;
+    background-color: var(--menubgcolor);
+    white-space: nowrap;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    list-style: none;
+}
+
+.submenu:hover {
+  display: block;
+}
+
+.submenu.is-open {
+    display: block;
+}
+
+.submenu-links {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 0.95rem;
+}
+
+.dropdown
+{
+  margin-left: -15px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.hasSubMenu
+{
+  display: inline-block;
+}
+
+/* Show submenu on hover of non-mobile devices */
+/* .dropdownmenu:hover > .submenu {
+  display: block;
+} */
+
+.hasSubMenu:hover ~ .submenu
+{
+  display: block;
+}
+
+  /* Mobile Toggle Button (Hamburger) */
+  .menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+  }
+  
+  /* Hamburger Bars */
+  .menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #FFFFFF;
+    margin-top: 5px;
+    margin-left: 0px;
+    transition: all 0.3s ease;
+  }
+  
+/*************************** MOBILE ***********************/
+  /* Mobile Responsive Styles (768px Breakpoint) */
+  @media (max-width: 768px) {
+    .menu-toggle {
+      display: flex;
+    }
+  
+    /* Drawer menu layout */
+    .nav-menu {
+      flex-direction: column;
+      width: 100%;
+      height: 81vh;
+      position: absolute;
+      top: 60px;
+      right: 0px;
+      width: 300px;
+      display: none;
+      background-color: var(--menubgcolor);
+      transition: all 0.4s ease;
+      padding: 0 0;
+      box-shadow: 0px 8px 10px rgba(0,0,0,0.3);
+      overflow-y: auto;
+      gap: 25px;
+    }
+  
+    .nav-menu.is-active {
+        display: flex;
+    }
+  
+    .nav-item {
+      width: 100%;
+      text-align: center;
+    }
+  
+    .nav-links {
+      width: 100%;
+    }
+  
+    /* Accordion style submenu for mobile */
+    .submenu {
+      position: relative;
+      top: 0;
+      display: none;
+    }
+
+    .hasSubMenu
+{
+  display: inline;
+
+}
+  }
