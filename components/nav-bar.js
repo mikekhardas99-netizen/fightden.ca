@@ -1,5 +1,6 @@
 const template = document.createElement('template');
 template.innerHTML = `
+<link rel="stylesheet" href="./components/navbar.css">
 <nav class="navbar">
     <div class="nav-container">
       <!-- Logo -->
@@ -51,10 +52,10 @@ class NavBar extends HTMLElement {
         shadow.appendChild(template.content.cloneNode(true));
 
         // Attach external CSS
-        const link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.href = './components/navbar.css'; // Adjust the path to your CSS file
-        shadow.appendChild(link);
+        //const link = document.createElement('link');
+        //link.rel = 'stylesheet';
+        //link.href = './components/navbar.css'; // Adjust the path to your CSS file
+        //shadow.appendChild(link);
 
         // Define default CSS variable in shadow DOM
         const style = document.createElement('style');
