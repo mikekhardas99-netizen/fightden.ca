@@ -8,7 +8,7 @@
   X-XSS-Protection: 1; mode=block
   Access-Control-Allow-Origin: https://fightden-ca.pages.dev https://fightden.ca
   #Cache-Control: public, max-age=2592000, immutable
-Content-Security-Policy: default-src 'self'; connect-src https://static.cloudflareinsights.com; script-src 'self' https://static.cloudflareinsights.com 'nonce-mJvK11NyrlXnbPiR7YgR7g=='; style-src 'self' 'unsafe-inline'; object-src 'none'; img-src 'self'; base-uri 'self'; frame-ancestors 'none'; media-src 'self'; require-trusted-types-for 'script'; trusted-types navbar-template
+Content-Security-Policy: default-src 'self'; connect-src https://cloudflareinsights.com https://static.cloudflareinsights.com; script-src 'self' https://static.cloudflareinsights.com 'nonce-mJvK11NyrlXnbPiR7YgR7g=='; style-src 'self' 'unsafe-inline'; object-src 'none'; img-src 'self'; base-uri 'self'; frame-ancestors 'none'; media-src 'self'; require-trusted-types-for 'script'; trusted-types navbar-template
 
 
 https://fightden-ca.pages.dev/*
