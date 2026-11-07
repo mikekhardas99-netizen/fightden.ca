@@ -5,7 +5,7 @@ template.innerHTML = `
 <nav class="navbar">
     <div class="nav-container">
       <!-- Logo -->
-      <a href="#" class="nav-logo">BrandLogo</a>
+      <a href="#" class="nav-logo"><img src="/images/fightden_logo.webp"></a>
 
       <!-- Navigation Links -->
       <ul class="nav-menu">
@@ -31,10 +31,6 @@ template.innerHTML = `
         <li class="nav-item"><a href="#" class="nav-links">Schedule</a></li>
         <li class="nav-item"><a href="#" class="nav-links">Shop</a></li>
         <li class="nav-item"><a href="#" class="nav-links">Contact Us</a></li>
-        <li class="nav-item"><a href="#" class="nav-links">Extra 1</a></li>
-        <li class="nav-item"><a href="#" class="nav-links">Extra 2</a></li>
-        <li class="nav-item"><a href="#" class="nav-links">Extra 3</a></li>
-        <li class="nav-item"><a href="#" class="nav-links">Extra 4</a></li>
       </ul>
 
       <!-- Hamburger Menu Icon for Mobile -->
