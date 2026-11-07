@@ -1,6 +1,7 @@
 const template = document.createElement('template');
 template.innerHTML = `
 <link rel="stylesheet" href="./components/navbar.css">
+<link rel="stylesheet" href="./assets/css/all.min.css">
 <nav class="navbar">
     <div class="nav-container">
       <!-- Logo -->
@@ -48,7 +49,7 @@ template.innerHTML = `
 
 class NavBar extends HTMLElement {
     connectedCallback() {
-        const shadow =this.attachShadow({mode: 'closed'})
+        const shadow = this.attachShadow({mode: 'closed'});
         shadow.appendChild(template.content.cloneNode(true));
 
         // Attach external CSS
@@ -65,6 +66,31 @@ class NavBar extends HTMLElement {
           }
         `;
         shadow.appendChild(style);
+
+
+        const mobileMenuButton = shadow.querySelector('#mobile-menu');
+        const navMenu = shadow.querySelector('.nav-menu');
+        const dropdownmenus = shadow.querySelectorAll('.dropdownmenu');
+
+        for (const dropdownmenu of dropdownmenus) {
+            console.log(dropdownmenu);
+            dropdownmenu.addEventListener('click', (e) => {
+                //console.log("submenu click");
+                console.log(e.currentTarget.querySelector('.submenu').classList);
+                e.currentTarget.querySelector('.submenu').classList.toggle('is-open');
+                e.currentTarget.querySelector('.fa-triangle').classList.toggle('fa-rotate-180');
+            });
+        }
+
+        // Toggle Mobile Menu
+        console.log(mobileMenuButton);
+        mobileMenuButton.addEventListener('click', () => {
+          navMenu.classList.toggle('is-active');
+        });
+
+        // shadow.querySelector('.menu-toggle').addEventListener('click', () => {
+        //   // do something
+        // });
     }
 
     static get observedAttributes() {
