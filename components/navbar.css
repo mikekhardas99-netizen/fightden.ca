@@ -54,6 +54,10 @@
   .nav-item {
     position: relative; /* Context for absolute positioned submenu */
   }
+
+  .dropdownmenu {
+    white-space: nowrap;
+  }
   
   .nav-links, .submenu-links {
     display: block;
