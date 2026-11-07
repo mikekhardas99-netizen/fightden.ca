@@ -1,6 +1,6 @@
 //<link rel="stylesheet" href="./assets/css/all.min.css">
 const template = document.createElement('template');
-template.innerHTML = `
+const NAVBAR_MARKUP = `
 <link rel="stylesheet" href="./components/navbar.css">
 <nav class="navbar">
     <div class="nav-container">
@@ -42,6 +42,18 @@ template.innerHTML = `
     </div>
   </nav>
 `;
+
+const navbarPolicy = trustedTypes.createPolicy('navbar-template', {
+  createHTML(input) {
+    if (input !== NAVBAR_MARKUP) {
+      console.error('Unexpected navbar markup:', input);
+      throw new TypeError('Unexpected navbar markup');
+    }
+    return input;
+  }
+});
+
+template.innerHTML = navbarPolicy.createHTML(NAVBAR_MARKUP);
 
 class NavBar extends HTMLElement { 
     connectedCallback() {
