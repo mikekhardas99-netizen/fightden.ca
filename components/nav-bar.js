@@ -100,17 +100,17 @@ class NavBar extends HTMLElement {
         const dropdownmenus = shadow.querySelectorAll('.dropdownmenu');
 
         for (const dropdownmenu of dropdownmenus) {
-            console.log(dropdownmenu);
+            //console.log(dropdownmenu);
             dropdownmenu.addEventListener('click', (e) => {
                 //console.log("submenu click");
-                console.log(e.currentTarget.querySelector('.submenu').classList);
+                //console.log(e.currentTarget.querySelector('.submenu').classList);
                 e.currentTarget.querySelector('.submenu').classList.toggle('is-open');
                 e.currentTarget.querySelector('.fa-triangle').classList.toggle('fa-rotate-180');
             });
         }
 
         // Toggle Mobile Menu
-        console.log(mobileMenuButton);
+        //console.log(mobileMenuButton);
         mobileMenuButton.addEventListener('click', () => {
           navMenu.classList.toggle('is-active');
         });
