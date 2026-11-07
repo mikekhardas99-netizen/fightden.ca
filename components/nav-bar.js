@@ -1,7 +1,7 @@
+//<link rel="stylesheet" href="./assets/css/all.min.css">
 const template = document.createElement('template');
 template.innerHTML = `
 <link rel="stylesheet" href="./components/navbar.css">
-<link rel="stylesheet" href="./assets/css/all.min.css">
 <nav class="navbar">
     <div class="nav-container">
       <!-- Logo -->
@@ -47,7 +47,7 @@ template.innerHTML = `
   </nav>
 `;
 
-class NavBar extends HTMLElement {
+class NavBar extends HTMLElement { 
     connectedCallback() {
         const shadow = this.attachShadow({mode: 'closed'});
         shadow.appendChild(template.content.cloneNode(true));
@@ -67,6 +67,25 @@ class NavBar extends HTMLElement {
         `;
         shadow.appendChild(style);
 
+        if (!document.getElementById('font-awesome-solid-font')) {
+            const fontFaceStyle = document.createElement('style');
+            fontFaceStyle.id = 'font-awesome-solid-font';
+            fontFaceStyle.textContent = `
+              @font-face {
+                font-family: "Font Awesome 7 Pro";
+                font-style: normal;
+                font-weight: 900;
+                font-display: block;
+                src: url("${new URL('../assets/webfonts/fa-solid-900.woff2', import.meta.url)}") format("woff2");
+              }
+            `;
+            document.head.appendChild(fontFaceStyle);
+        }
+
+        const fontAwesomeLink = document.createElement('link');
+        fontAwesomeLink.rel = 'stylesheet';
+        fontAwesomeLink.href = new URL('../assets/css/all.min.css', import.meta.url);
+        shadow.appendChild(fontAwesomeLink);
 
         const mobileMenuButton = shadow.querySelector('#mobile-menu');
         const navMenu = shadow.querySelector('.nav-menu');
@@ -87,10 +106,6 @@ class NavBar extends HTMLElement {
         mobileMenuButton.addEventListener('click', () => {
           navMenu.classList.toggle('is-active');
         });
-
-        // shadow.querySelector('.menu-toggle').addEventListener('click', () => {
-        //   // do something
-        // });
     }
 
     static get observedAttributes() {
