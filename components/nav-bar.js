@@ -57,6 +57,7 @@ template.innerHTML = navbarPolicy.createHTML(NAVBAR_MARKUP);
 
 class NavBar extends HTMLElement { 
     connectedCallback() {
+        this.classList.add('navbar-loading');
         const shadow = this.attachShadow({mode: 'closed'});
         shadow.appendChild(template.content.cloneNode(true));
 
@@ -71,6 +72,11 @@ class NavBar extends HTMLElement {
         style.textContent = `
           :host {
             --menubgcolor: #000000;
+            display: block;
+            min-height: 60px;
+          }
+          :host(.navbar-loading) {
+            visibility: hidden;
           }
         `;
         shadow.appendChild(style);
@@ -93,6 +99,29 @@ class NavBar extends HTMLElement {
         const fontAwesomeLink = document.createElement('link');
         fontAwesomeLink.rel = 'stylesheet';
         fontAwesomeLink.href = new URL('../assets/css/all.min.css', import.meta.url);
+        const navbarStylesheetLink = shadow.querySelector('link[rel="stylesheet"]');
+
+        let pendingStylesheets = 2;
+        const trackStylesheet = (link) => {
+            let settled = false;
+            const settle = (loaded) => {
+                if (settled) return;
+                settled = true;
+                if (!loaded) {
+                    console.error(`Failed to load navbar stylesheet: ${link.href}`);
+                }
+                pendingStylesheets -= 1;
+                if (pendingStylesheets === 0) {
+                    this.classList.remove('navbar-loading');
+                }
+            };
+
+            link.addEventListener('load', () => settle(true), { once: true });
+            link.addEventListener('error', () => settle(false), { once: true });
+        };
+
+        trackStylesheet(navbarStylesheetLink);
+        trackStylesheet(fontAwesomeLink);
         shadow.appendChild(fontAwesomeLink);
 
         const mobileMenuButton = shadow.querySelector('#mobile-menu');
