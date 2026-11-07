@@ -4,7 +4,7 @@
   Cross-Origin-Opener-Policy: same-origin
   Cross-Origin-Resource-Policy: same-origin
   Cross-Origin-Embedder-Policy: require-corp; report-to='default'
-  Permissions-Policy: accelerometer=(), autoplay=(), bluetooth=(), browsing-topics=(), camera=(), cross-origin-isolated=(), display-capture=(), geolocation=(self "https://fightden-ca.pages.dev"), gyroscope=(), magnetometer=(), microphone=(), payment=(), picture-in-picture=(), screen-wake-lock=(), serial=(), usb=(), web-share=(self)
+  Permissions-Policy: accelerometer=(), autoplay=(), bluetooth=(), camera=(), cross-origin-isolated=(), display-capture=(), geolocation=(self "https://fightden-ca.pages.dev"), gyroscope=(), magnetometer=(), microphone=(), payment=(), picture-in-picture=(), screen-wake-lock=(), serial=(), usb=(), web-share=(self)
   X-XSS-Protection: 1; mode=block
   Access-Control-Allow-Origin: https://fightden-ca.pages.dev https://fightden.ca
   #Cache-Control: public, max-age=2592000, immutable
