@@ -9,28 +9,31 @@ const NAVBAR_MARKUP = `
 
       <!-- Navigation Links -->
       <ul class="nav-menu">
-        <li class="nav-item"><a href="#" class="nav-links">About</a></li>
+        <li class="nav-item"><a href="#" class="nav-links">ABOUT</a></li>
         <li class="nav-item dropdownmenu">
-         <a href="#" class="nav-links hasSubMenu">Services</a><i class="fa-solid fa-triangle fa-rotate-180 fa-2xs dropdown" style="color: rgb(255, 255, 255);"></i>
+         <a href="#" class="nav-links hasSubMenu">SERVICES</a><i class="fa-solid fa-triangle fa-rotate-180 fa-2xs dropdown" style="color: rgb(255, 255, 255);"></i>
          <ul class="submenu">
-          <li><a href="#" class="submenu-links">Service 1</a></li>
-          <li><a href="#" class="submenu-links">Service 2</a></li>
-          <li><a href="#" class="submenu-links">Service 3</a></li>
+          <li><a href="#" class="submenu-links">MEMBERSHIPS</a></li>
+          <li><a href="#" class="submenu-links">INDIVIDUAL CLASSES</a></li>
+          <li><a href="#" class="submenu-links">CORPORATE SEMINARS</a></li>
+          <li><a href="#" class="submenu-links">DIGITAL</a></li>
          </ul>
         </li>
         
+        <!--
         <li class="nav-item dropdownmenu">
-          <a href="#" class="nav-links hasSubMenu">Products</a><i class="fa-solid fa-triangle fa-rotate-180 fa-2xs dropdown" style="color: rgb(255, 255, 255);"></i>
+          <a href="#" class="nav-links hasSubMenu">PRODUCTS</a><i class="fa-solid fa-triangle fa-rotate-180 fa-2xs dropdown" style="color: rgb(255, 255, 255);"></i>
           <ul class="submenu">
             <li><a href="#" class="submenu-links">Product 1</a></li>
             <li><a href="#" class="submenu-links">Product 2</a></li>
             <li><a href="#" class="submenu-links">Product 3</a></li>
           </ul>
         </li>
-        <li class="nav-item"><a href="#" class="nav-links">Locations</a></li>
-        <li class="nav-item"><a href="#" class="nav-links">Schedule</a></li>
-        <li class="nav-item"><a href="#" class="nav-links">Shop</a></li>
-        <li class="nav-item"><a href="#" class="nav-links">Contact Us</a></li>
+        -->
+        <li class="nav-item"><a href="#" class="nav-links">LOCATIONS</a></li>
+        <li class="nav-item"><a href="#" class="nav-links">SCHEDULE</a></li>
+        <li class="nav-item"><a href="#" class="nav-links">SHOP</a></li>
+        <li class="nav-item"><a href="#" class="nav-links">CONTACT US</a></li>
       </ul>
 
       <!-- Hamburger Menu Icon for Mobile -->
